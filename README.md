@@ -48,12 +48,14 @@ System diagram: `assets/architecture.png`
 ## Setup Instructions
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/applied-ai-system-final.git
 cd applied-ai-system-final
 ```
 
 ### 2. Create virtual environment (recommended)
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate       # Mac/Linux
@@ -61,11 +63,13 @@ source .venv/bin/activate       # Mac/Linux
 ```
 
 ### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Set your API key (for agent mode only)
+
 ```bash
 export ANTHROPIC_API_KEY="your-api-key-here"
 ```
@@ -75,13 +79,17 @@ export ANTHROPIC_API_KEY="your-api-key-here"
 ## Running the System
 
 ### Classic Mode (no API key needed)
+
 Runs 6 predefined profiles through the recommender:
+
 ```bash
 python -m src.main
 ```
 
 ### Agent Mode (requires API key)
+
 Describe what you want in natural language:
+
 ```bash
 python -m src.main --agent "I'm feeling sad and want something calm and acoustic"
 python -m src.main --agent "Give me something high energy for the gym"
@@ -89,11 +97,13 @@ python -m src.main --agent "I want moody late-night vibes"
 ```
 
 ### Run Test Harness
+
 ```bash
 python -m tests.test_harness
 ```
 
 ### Run Unit Tests
+
 ```bash
 pytest
 ```
@@ -103,6 +113,7 @@ pytest
 ## Sample Interactions
 
 **Input 1:** `"I'm feeling sad and want something calm and acoustic"`
+
 ```
 🧠 Claude interpreted this as:
    Genre:         ambient
@@ -118,6 +129,7 @@ pytest
 ```
 
 **Input 2:** `"Give me something high energy for the gym"`
+
 ```
 🧠 Claude interpreted this as:
    Genre:         pop
@@ -132,6 +144,7 @@ pytest
 ```
 
 **Input 3:** `"Late night drive, feeling reflective and a bit dark"`
+
 ```
 🧠 Claude interpreted this as:
    Genre:         synthwave
@@ -161,10 +174,12 @@ pytest
 ## Testing Summary
 
 **Test Harness** (10 automated cases):
+
 - 10/10 passed | Confidence Score: 100%
 - Covers: genre dominance, acoustic bonus, score sorting, edge cases (unknown genre, conflicting preferences), explanation completeness
 
 **Unit Tests** (15 cases via pytest):
+
 - Core recommender logic (from Project 3)
 - Agent validation guardrails (new)
 - Edge cases: empty songs, invalid energy clamping, missing profile keys
@@ -183,9 +198,10 @@ I also learned that guardrails are not optional. When I tested the agent without
 
 ## 🎬 Demo Walkthrough
 
-[Loom video link — add after recording]
+[Watch Demo Walkthrough](https://www.loom.com/share/a0853d2807f2420baa06b67bbb742b34)
 
 The walkthrough demonstrates:
+
 - Classic mode with 3 profiles
 - Agent mode with 3 natural language inputs
 - Test harness run with confidence score output
